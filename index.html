@@ -4,6 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>mrodriguezoi</title>
+    <script>
+      // Set theme before page renders to prevent flash
+      (function() {
+        const theme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.classList.add(theme);
+      })();
+    </script>
     <link rel="stylesheet" href="styles.css" />
     <link rel="shortcut icon" href="assets/favicon.png" type="image/png">
   </head>
@@ -85,22 +92,18 @@
 
     <script>
       const themeToggle = document.getElementById('theme-toggle');
-      const body = document.body;
-      const background = document.querySelector('.background');
-
-      const currentTheme = localStorage.getItem('theme') || 'dark';
-      body.classList.add(currentTheme);
+      const html = document.documentElement;
 
       themeToggle.addEventListener('click', () => {
-        const isDark = body.classList.contains('dark');
+        const isDark = html.classList.contains('dark');
 
         if (isDark) {
-          body.classList.remove('dark');
-          body.classList.add('light');
+          html.classList.remove('dark');
+          html.classList.add('light');
           localStorage.setItem('theme', 'light');
         } else {
-          body.classList.remove('light');
-          body.classList.add('dark');
+          html.classList.remove('light');
+          html.classList.add('dark');
           localStorage.setItem('theme', 'dark');
         }
       });
