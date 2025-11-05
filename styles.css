@@ -38,12 +38,12 @@ body {
 
 body.light .background,
 html.light .background {
-  background-image: url(./assets/background-light.png);
+  background-image: url(./assets/background-light.webp);
 }
 
 body.dark .background,
 html.dark .background {
-  background-image: url(./assets/background-dark.png);
+  background-image: url(./assets/background-dark.webp);
 }
 
 body.dark,
